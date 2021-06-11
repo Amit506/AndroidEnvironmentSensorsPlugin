@@ -8,7 +8,6 @@ Android only
 - TYPE_PRESSURE	
 - TYPE_RELATIVE_HUMIDITY
 - TYPE_TEMPERATURE
-- 
 for more information on [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment)<br />
 
 
