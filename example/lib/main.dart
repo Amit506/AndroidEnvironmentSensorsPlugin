@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'package:android_environment_sensors/android_environment_sensors.dart';
@@ -19,7 +21,15 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
   }
+
 //
+  example() {
+    StreamSubscription lightSubscription =
+        androidEnvironmentSensors.lightStream.listen((event) {
+      print(event);
+    });
+    lightSubscription.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
