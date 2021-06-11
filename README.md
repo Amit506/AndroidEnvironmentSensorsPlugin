@@ -2,18 +2,18 @@
 Environmental sensor plugin for flutter<br />
 Android only
 
-***supported sensor***<br/>
+<br/>***supported sensor*** <br/>
 - TYPE_AMBIENT_TEMPERATURE
 - TYPE_LIGHT	
 - TYPE_PRESSURE	
 - TYPE_RELATIVE_HUMIDITY
 - TYPE_TEMPERATURE
-for more information on [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment)<br />
+<br/>for more information on [environment sensors](https://developer.android.com/guide/topics/sensors/sensors_environment)<br />
 
 
 
 
-**Usage**<br />
+<br/>**Usage**<br />
 *Check if sensor is available or not*<br />
 
 ```
