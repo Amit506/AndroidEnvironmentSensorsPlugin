@@ -1,7 +1,6 @@
 name: android_environment_sensors
 description: A new Flutter project.
 version: 0.0.1
-author: Amit Kumar
 homepage: https://github.com/Amit506/AndroidEnvironmentSensorsPlugin
 
 environment:
