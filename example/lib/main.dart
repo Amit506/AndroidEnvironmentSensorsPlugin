@@ -12,17 +12,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-  bool isExist=false;
-  AndroidEnvironmentSensors androidEnvironmentSensors = AndroidEnvironmentSensors();
+  bool isExist = false;
+  AndroidEnvironmentSensors androidEnvironmentSensors =
+      AndroidEnvironmentSensors();
   @override
   void initState() {
     super.initState();
-
   }
 //
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -32,43 +29,38 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child:GestureDetector(
-            onTap: (){
+          child: GestureDetector(
+            onTap: () {
               print('tabbed');
-
             },
-    child: Center(
-
-    child:    ListTile(
-          title: Text('Light Sensor'),
-          trailing:!isExist?TextButton(
-
-            style: OutlinedButton.styleFrom(
-
-            ),
-            onPressed: ()async{
-            final exist = await androidEnvironmentSensors.isExist(AndroidEnvironmentSensors.TYPE_LIGHT);
-            print(isExist.toString());
-            setState(() {
-              isExist=exist;
-            });
-          },
-          child: Text('connect'),):
-         StreamBuilder(
-           stream: androidEnvironmentSensors.lightStream,
-             builder: (_,snap){
-             if(snap.hasData){
-               return Text(snap.data.toString());
-             }else{
-               return Text('connecting');
-             }
-         })
-
-
-        )
-
-    ),
-        ),),
+            child: Center(
+                child: ListTile(
+                    title: Text('Light Sensor'),
+                    trailing: !isExist
+                        ? TextButton(
+                            style: OutlinedButton.styleFrom(),
+                            onPressed: () async {
+                              final exist =
+                                  await androidEnvironmentSensors.isExist(
+                                      AndroidEnvironmentSensors.TYPE_LIGHT);
+                              print(isExist.toString());
+                              setState(() {
+                                isExist = exist;
+                              });
+                            },
+                            child: Text('connect'),
+                          )
+                        : StreamBuilder(
+                            stream: androidEnvironmentSensors.lightStream,
+                            builder: (_, snap) {
+                              if (snap.hasData) {
+                                return Text(snap.data.toString());
+                              } else {
+                                return Text('connecting');
+                              }
+                            }))),
+          ),
+        ),
       ),
     );
   }
