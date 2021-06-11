@@ -1,6 +1,6 @@
 name: android_environment_sensors
 description: support for android environmnetal sensors
-version: 0.0.1
+version: 0.0.1+2
 homepage: https://github.com/Amit506/AndroidEnvironmentSensorsPlugin
 
 environment:
